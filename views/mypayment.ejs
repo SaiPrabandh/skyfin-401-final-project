@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment History</title>
+    <link rel="stylesheet" href="/mypayment.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Payment History</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Freelancer Name</th>
+                    <th>Amount</th>
+                    <th>Service Charge</th>
+                    <th>Total Amount</th>
+                    <th>Payment Method</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% payments.forEach(payment => { %>
+                <tr>
+                    <td><%= payment.freelancerName %></td>
+                    <td>$<%= payment.amount %></td>
+                    <td>$<%= payment.serviceCharge %></td>
+                    <td>$<%= payment.totalAmount %></td>
+                    <td><%= payment.paymentMethod %></td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>

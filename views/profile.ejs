@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Dashboard</title>
+    <link rel="stylesheet" href="/profile.css">
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <div class="profile-left">
+                <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Profile Picture">
+                <h2><%= user.fullname %></h2>
+                <nav class="profile-nav">
+                    <a href="#">Profile</a>
+                    <a href="/mypayments">Payment History</a>
+                </nav>
+                <form action="/logout" method="POST">
+                    <button type="submit" class="logout-btn">Log Out</button>
+                </form>
+            </div>
+            <div class="profile-right">
+                <h2>Profile Details</h2>
+                <form action="/profile/edit" method="POST" class="profile-edit-form" id="profileEditForm">
+                    <div class="profile-details-grid">
+                        <div class="profile-details">
+                            <label for="fullname">Full Name</label>
+                            <input type="text" id="fullname" name="fullname" value="<%= user.fullname %>" disabled>
+                        </div>
+                        <div class="profile-details">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" value="<%= user.company %>" disabled>
+                        </div>
+                        <div class="profile-details">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" value="<%= user.phone %>" disabled>
+                        </div>
+                        <div class="profile-details">
+                            <label for="location">Location</label>
+                            <input type="text" id="location" name="location" value="<%= user.location %>" disabled>
+                        </div>
+                    </div>
+                    <button type="button" id="editBtn" class="edit-btn">Edit Profile</button>
+                    <button type="submit" id="saveBtn" class="save-btn" style="display: none;">Save Changes</button>
+                </form>
+                <a href="/" id="goHomeBtn" class="go-home-btn">Go to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const editBtn = document.getElementById("editBtn");
+        const saveBtn = document.getElementById("saveBtn");
+        const form = document.getElementById("profileEditForm");
+        const inputs = form.querySelectorAll("input[type='text'], input[type='tel'], input[type='email']");
+        editBtn.addEventListener("click", function() {
+            inputs.forEach(input => input.disabled = false); 
+            editBtn.style.display = "none"; 
+            saveBtn.style.display = "inline-block"; 
+        });
+        form.addEventListener("submit", function(event) {
+            inputs.forEach(input => input.disabled = false); 
+        });
+    </script>
+</body>
+</html>

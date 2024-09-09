@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Issues - FAQ</title>
+    <link rel="stylesheet" href="payment-faq-styles.css">
+</head>
+<body>
+
+<div class="faq-container">
+    <div class="faq-header">Payment Issues - Frequently Asked Questions</div>
+    <div class="faq">
+        <h4 onclick="toggleAnswer(this)">Why was my payment declined?</h4>
+        <p>Payments can be declined for various reasons including insufficient funds, incorrect card details, or network issues. Please check your payment method and try again.</p>
+    </div>
+    <div class="faq">
+        <h4 onclick="toggleAnswer(this)">How do I update my payment method?</h4>
+        <p>To update your payment method, go to your account settings, select 'Payment Methods', and add a new payment method.</p>
+    </div>
+    <div class="faq">
+        <h4 onclick="toggleAnswer(this)">When will I receive my refund?</h4>
+        <p>Refunds are typically processed within 5-7 business days. If you do not receive your refund within this time, please contact support.</p>
+    </div>
+    <div class="faq">
+        <h4 onclick="toggleAnswer(this)">How can I view my transaction history?</h4>
+        <p>You can view your transaction history by going to your account settings and selecting 'Transaction History'.</p>
+    </div>
+    <a href="/customersup" class="back-button">Back</a>
+</div>
+
+<script>
+    function toggleAnswer(element) {
+        var answer = element.nextElementSibling;
+        if (answer.style.display === "block") {
+            answer.style.display = "none";
+        } else {
+            answer.style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>

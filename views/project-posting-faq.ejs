@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Posting Issues - FAQ</title>
+    <link rel="stylesheet" href="project-posting-faq-styles.css">
+</head>
+<body>
+
+<div class="faq-container">
+    <div class="faq-header">Project Posting Issues - Frequently Asked Questions</div>
+    <div class="faq">
+        <h4 onclick="toggleAnswer(this)">Why can't I post my project?</h4>
+        <p>There could be several reasons why you are unable to post your project, including issues with your account, not meeting the project's requirements, or technical difficulties. Ensure your account is in good standing and all required fields are filled out correctly.</p>
+    </div>
+    <div class="faq">
+        <h4 onclick="toggleAnswer(this)">How do I know if my project meets the requirements?</h4>
+        <p>Check the guidelines provided on the project posting page. Ensure you have detailed the project scope, required skills, budget, and deadlines. Projects that do not adhere to the guidelines may be rejected.</p>
+    </div>
+    <div class="faq">
+        <h4 onclick="toggleAnswer(this)">What should I do if I encounter a technical issue?</h4>
+        <p>If you encounter a technical issue while posting your project, try refreshing the page or clearing your browser's cache. If the problem persists, contact customer support for assistance.</p>
+    </div>
+    <a href="/customersup" class="back-button">Back</a>
+</div>
+
+<script>
+    function toggleAnswer(element) {
+        var answer = element.nextElementSibling;
+        if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+        } else {
+            answer.style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>

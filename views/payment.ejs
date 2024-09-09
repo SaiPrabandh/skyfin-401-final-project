@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Payment</h1>
+            <div class="customer-support">
+                <span>Customer Support: 123-456-7890</span>
+            </div>
+        </header>
+        <div class="payment-section">
+            <div class="payment-path">
+                <div class="path-step active" id="payment-details-btn">Payment Details</div>
+            </div>
+            <div class="payment-form-container">
+                <div id="payment-details" class="payment-form">
+                    <div class="form-left">
+                        <h2>Enter Card Details</h2>
+                        <div class="payment-options">
+                            <div class="option" data-option="debit-card">
+                                <input type="radio" name="payment-method" id="debit-card">
+                                <label for="debit-card">Debit Card</label>
+                            </div>
+                            <div class="option" data-option="credit-card">
+                                <input type="radio" name="payment-method" id="credit-card">
+                                <label for="credit-card">Credit Card</label>
+                            </div>
+                            <div class="option" data-option="upi">
+                                <input type="radio" name="payment-method" id="upi">
+                                <label for="upi">UPI</label>
+                            </div>
+                            <div class="option" data-option="net-banking">
+                                <input type="radio" name="payment-method" id="net-banking">
+                                <label for="net-banking">Net Banking</label>
+                            </div>
+                            <div class="option" data-option="wallet">
+                                <input type="radio" name="payment-method" id="wallet">
+                                <label for="wallet">Wallet</label>
+                            </div>
+                        </div>
+                        <div class="payment-details hidden" id="debit-card-details">
+                            <div>
+                                <label for="debit-card-number">Card Number</label>
+                                <input type="text" id="debit-card-number" required>
+                            </div>
+                            <div>
+                                <label for="debit-card-expiry">Expiry Date</label>
+                                <input type="text" id="debit-card-expiry" placeholder="MM/YY" required>
+                            </div>
+                            <div>
+                                <label for="debit-card-cvv">CVV</label>
+                                <input type="text" id="debit-card-cvv" required>
+                            </div>
+                        </div>
+                        <div class="payment-details hidden" id="credit-card-details">
+                            <div>
+                                <label for="credit-card-number">Card Number</label>
+                                <input type="text" id="credit-card-number" required>
+                            </div>
+                            <div>
+                                <label for="credit-card-expiry">Expiry Date</label>
+                                <input type="text" id="credit-card-expiry" placeholder="MM/YY" required>
+                            </div>
+                            <div>
+                                <label for="credit-card-cvv">CVV</label>
+                                <input type="text" id="credit-card-cvv" required>
+                            </div>
+                        </div>
+                        <div class="payment-details hidden" id="upi-details">
+                            <div>
+                                <label for="upi-id">UPI ID</label>
+                                <input type="text" id="upi-id" required>
+                            </div>
+                        </div>
+                        <div class="payment-details hidden" id="net-banking-details">
+                            <div>
+                                <label for="bank-name">Bank Name</label>
+                                <input type="text" id="bank-name" required>
+                            </div>
+                            <div>
+                                <label for="account-number">Account Number</label>
+                                <input type="text" id="account-number" required>
+                            </div>
+                        </div>
+                        <div class="payment-details hidden" id="wallet-details">
+                            <p>You have selected to pay with Wallet.</p>
+                        </div>
+                        <button type="submit">Pay</button>
+                    </div>
+                    <div class="form-right">
+                        <h2>Payment Summary</h2>
+                        <div class="summary-table">
+                            <div class="summary-row">
+                                <div class="summary-cell">Amount</div>
+                                <div class="summary-cell">$50.00</div>
+                            </div>
+                            <div class="summary-row">
+                                <div class="summary-cell">Service Charges</div>
+                                <div class="summary-cell">$2.00</div>
+                            </div>
+                            <div class="summary-row total">
+                                <div class="summary-cell">Total</div>
+                                <div class="summary-cell">$52.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="confirmation" class="confirmation hidden">
+                    <h2>Payment Successful!</h2>
+                    <p>Thank you for your payment of $<span id="total-amount"></span>.</p>
+                    <p>Your payment to <strong id="freelancer-name"></strong> has been processed successfully.</p>
+                    <a href="/mypayments">View all Payments</a>
+                </div>
+                
+            </div>
+        </div>
+        <footer>
+            <div class="payment-icons">
+                <img src="assets/visa.jpg" alt="Visa">
+                <img src="assets/mastercard.jpg" alt="Mastercard">
+                <img src="assets/amex.jpg" alt="American Express">
+                <img src="assets/discover.jpg" alt="Discover">
+                <img src="assets/rupay.jpg" alt="RuPay">
+                <img src="assets/upi.jpg" alt="UPI">
+            </div>
+            <div class="secure-payment">
+                <img src="images/secure.jpg" alt="Secure Payment">
+                <span>Secure Payment</span>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('name'); 
+            const email = urlParams.get('email'); 
+            const amount = parseFloat(urlParams.get('amount'));
+            const serviceCharge = (amount * 0.03).toFixed(2); 
+            const totalAmount = (amount + parseFloat(serviceCharge)).toFixed(2); 
+            document.querySelector('.summary-table .summary-row:nth-child(1) .summary-cell:nth-child(2)').textContent = `$${amount.toFixed(2)}`;
+            document.querySelector('.summary-table .summary-row:nth-child(2) .summary-cell:nth-child(2)').textContent = `$${serviceCharge}`;
+            document.querySelector('.summary-table .total .summary-cell:nth-child(2)').textContent = `$${totalAmount}`;
+            const freelancerName = document.createElement('div');
+            freelancerName.classList.add('summary-row');
+            freelancerName.innerHTML = `<div class="summary-cell">Freelancer</div><div class="summary-cell">${name}</div>`;
+            document.querySelector('.summary-table').insertBefore(freelancerName, document.querySelector('.summary-table .summary-row:nth-child(1)'));
+            document.querySelector('header h1').textContent = `Payment for ${name}`;
+            function validatePaymentDetails() {
+                let valid = true;
+                const cardNumber = document.getElementById('debit-card-number').value || document.getElementById('credit-card-number').value;
+                const expiryDate = document.getElementById('debit-card-expiry').value || document.getElementById('credit-card-expiry').value;
+                const cvv = document.getElementById('debit-card-cvv').value || document.getElementById('credit-card-cvv').value;
+                const upiId = document.getElementById('upi-id').value;
+                if (cardNumber && cardNumber.length !== 16) {
+                    alert('Invalid card number. It should be 16 digits.');
+                    valid = false;
+                }
+                if (expiryDate && !/^\d{2}\/\d{2}$/.test(expiryDate)) {
+                    alert('Invalid expiry date format. Use MM/YY.');
+                    valid = false;
+                }
+                if (cvv && cvv.length !== 3) {
+                    alert('Invalid CVV. It should be 3 digits.');
+                    valid = false;
+                }
+                if (upiId && !/^[a-zA-Z0-9.]+@[a-zA-Z]+$/.test(upiId)) {
+                    alert('Invalid UPI ID. Example: example@bank');
+                    valid = false;
+                }
+    
+                return valid;
+            }
+            function showConfirmation() {
+                confirmation.classList.remove('hidden');
+                document.getElementById('total-amount').textContent = `$${totalAmount}`;
+                document.getElementById('freelancer-name').textContent = name;
+                confirmation.scrollIntoView({ behavior: 'smooth' });
+            }
+            const payButton = document.querySelector('button[type="submit"]');
+            const paymentFormContainer = document.querySelector('.payment-form-container');
+            const confirmation = document.getElementById('confirmation');
+            const paymentDetailsBtn = document.getElementById('payment-details-btn');
+    
+            payButton.addEventListener('click', function(e) {
+                e.preventDefault(); 
+                if (validatePaymentDetails()) {
+                    const paymentData = {
+                        freelancerName: name,
+                        amount: amount.toFixed(2),
+                        serviceCharge: serviceCharge,
+                        totalAmount: totalAmount,
+                        paymentMethod: document.querySelector('input[name="payment-method"]:checked').id, // Get selected payment method
+                    };
+                    fetch('/payment-submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(paymentData),
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.message === 'Payment successfully recorded.') {
+                            showConfirmation(); 
+                        } else {
+                            alert('Payment failed. Please try again.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+                }
+            });
+            document.querySelectorAll('.option').forEach(option => {
+                option.addEventListener('click', function() {
+                    document.querySelectorAll('.payment-details').forEach(detail => {
+                        detail.classList.add('hidden');
+                    });
+                    const selectedOption = this.getAttribute('data-option');
+                    document.getElementById(`${selectedOption}-details`).classList.remove('hidden');
+                });
+            });
+        });
+    </script>    
+</body>
+</html>

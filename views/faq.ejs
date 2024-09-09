@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Upload Issues - FAQ</title>
+    <link rel="stylesheet" href="faq-styles.css">
+</head>
+<body>
+
+<div class="faq-container">
+    <div class="faq-header">Document Upload Issues - Frequently Asked Questions</div>
+    <div class="faq">
+        <h4 onclick="toggleAnswer(this)">What formats are supported for image uploads?</h4>
+        <p>Currently, we support JPG, PNG, and GIF formats for image uploads.</p>
+    </div>
+    <div class="faq">
+        <h4 onclick="toggleAnswer(this)">What is the maximum file size for uploads?</h4>
+        <p>The maximum file size for uploads is 5MB for images and 100MB for videos.</p>
+    </div>
+    <div class="faq">
+        <h4 onclick="toggleAnswer(this)">Why was my upload rejected?</h4>
+        <p>Uploads can be rejected if they are in an unsupported format, exceed the file size limit, or contain inappropriate content. Please check your file and try again.</p>
+    </div>
+    <div class="faq">
+        <h4 onclick="toggleAnswer(this)">How can I upload a video?</h4>
+        <p>To upload a video, go to the project page, click on 'Add Video', select your video file, and click 'Upload'. Make sure your video is in MP4 format and under 100MB.</p>
+    </div>
+    <a href="/customersup" class="back-button">Back</a>
+</div>
+
+<script>
+    function toggleAnswer(element) {
+        var answer = element.nextElementSibling;
+        if (answer.style.display === "block") {
+            answer.style.display = "none";
+        } else {
+            answer.style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>

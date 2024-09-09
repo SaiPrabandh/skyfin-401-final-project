@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Support</title>
+    <link rel="stylesheet" href="customersup.css">
+</head>
+<body>
+
+<div class="chat-container">
+    <div class="chat-header">User Support</div>
+    <div class="chat-box" id="chatBox">
+        <div class="chat-message">
+            <img src="https://thumbs.dreamstime.com/b/customer-service-customer-care-icon-green-round-button-customer-service-customer-care-icon-isolated-green-round-button-abstract-103896467.jpg" alt="Bot Image">
+            <div class="message-content">Hi, How can I help you today?</div>
+        </div>
+        <div class="chat-message">
+            <img src="https://thumbs.dreamstime.com/b/customer-service-customer-care-icon-green-round-button-customer-service-customer-care-icon-isolated-green-round-button-abstract-103896467.jpg" alt="Bot Image">
+            <div class="message-content">1. Payment Issue</div>
+        </div>
+        <div class="chat-message">
+            <img src="https://thumbs.dreamstime.com/b/customer-service-customer-care-icon-green-round-button-customer-service-customer-care-icon-isolated-green-round-button-abstract-103896467.jpg" alt="Bot Image">
+            <div class="message-content">2. Project Posting Issue</div>
+        </div>
+        <div class="chat-message">
+            <img src="https://thumbs.dreamstime.com/b/customer-service-customer-care-icon-green-round-button-customer-service-customer-care-icon-isolated-green-round-button-abstract-103896467.jpg" alt="Bot Image">
+            <div class="message-content">3. Document Upload Issue</div>
+        </div>
+        <div class="chat-message">
+            <img src="https://thumbs.dreamstime.com/b/customer-service-customer-care-icon-green-round-button-customer-service-customer-care-icon-isolated-green-round-button-abstract-103896467.jpg" alt="Bot Image">
+            <div class="message-content">4. Others</div>
+        </div>
+    </div>
+    <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Type your message here...">
+        <button onclick="handleUserInput()">Send</button>
+    </div>
+</div>
+
+<script>
+    function handleUserInput() {
+        var userInput = document.getElementById('userInput').value.trim();
+        if (userInput === '') return;
+
+        var chatBox = document.getElementById('chatBox');
+
+        var userMessage = document.createElement('div');
+        userMessage.className = 'chat-message user';
+        userMessage.innerHTML = '<div class="message-content">' + userInput + '</div>';
+        chatBox.appendChild(userMessage);
+
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+        document.getElementById('userInput').value = '';
+        setTimeout(function() {
+            var botMessage = document.createElement('div');
+            botMessage.className = 'chat-message';
+            var botContent = '';
+
+            if (userInput === '1') {
+                window.location.href = '/payment-faq';
+                return;
+            } else if (userInput === '2') {
+                window.location.href = '/project-posting-faq';
+                return;
+            } else if (userInput === '3') {
+                window.location.href = '/faq';
+                return;
+            } else if (userInput === '4') {
+                botContent = 'Please type your issue below and click Send.';
+            } else {
+                botContent = 'You said: "' + userInput + '". Please provide more details so I can assist you better.';
+            }
+
+            botMessage.innerHTML = '<img src="https://thumbs.dreamstime.com/b/customer-service-customer-care-icon-green-round-button-customer-service-customer-care-icon-isolated-green-round-button-abstract-103896467.jpg" alt="Bot Image"><div class="message-content">' + botContent + '</div>';
+            chatBox.appendChild(botMessage);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }, 1000);
+    }
+</script>
+
+</body>
+</html>

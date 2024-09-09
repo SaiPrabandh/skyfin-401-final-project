@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire a Chartered Accountant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="hirefreelancer.css">    
+</head>
+<body>
+    <header class="header">
+        <h1>Hire a Chartered Accountant</h1>
+    </header>
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search for accountants...">
+        <button onclick="searchProfiles()">Search</button>
+    </div>
+    
+
+    <div class="freelancers-container">
+        <div id="profile1" class="freelancer-box">
+            <img src="https://randomuser.me/api/portraits/men/10.jpg" alt="John Doe">
+            <h3>John Doe</h3>
+            <p>Tax Advisor</p>
+            <div class="rating">⭐⭐⭐⭐⭐ (4.9)</div>
+            <p>$75/hour</p>
+            <p>10+ years of experience in corporate taxation and financial planning.</p>
+            <div class="skills">
+                <span class="skill"><i class="fas fa-calculator"></i> Taxation</span>
+                <span class="skill"><i class="fas fa-chart-line"></i> Auditing</span>
+                <span class="skill"><i class="fas fa-file-invoice-dollar"></i> Financial Analysis</span>
+            </div>
+            <p><i class="fas fa-clock"></i> Available now</p>
+            <p><i class="fas fa-briefcase"></i> 50 completed projects</p>
+            <p><i class="fas fa-smile"></i> 98% client satisfaction</p>
+            <div class="buttons">
+                <button class="button view-profile" onclick="expandProfile('profile1')">View Profile</button>
+                <a href="/payment?name=John Doe&email=john.doe@example.com&amount=50" class="hire-now-btn">Hire Now</a>
+            </div>
+        </div>
+        <div id="profile2" class="freelancer-box">
+            <img src="https://randomuser.me/api/portraits/women/10.jpg" alt="Jane Smith">
+            <h3>Jane Smith</h3>
+            <p>Financial Analyst</p>
+            <div class="rating">⭐⭐⭐⭐ (4.8)</div>
+            <p>$85/hour</p>
+            <p>Expert in financial reporting and analysis with a strong background in market research.</p>
+            <div class="skills">
+                <span class="skill"><i class="fas fa-chart-pie"></i> Financial Reporting</span>
+                <span class="skill"><i class="fas fa-search-dollar"></i> Market Analysis</span>
+                <span class="skill"><i class="fas fa-coins"></i> Investment Strategies</span>
+            </div>
+            <p><i class="fas fa-clock"></i> Available now</p>
+            <p><i class="fas fa-briefcase"></i> 30 completed projects</p>
+            <p><i class="fas fa-smile"></i> 95% client satisfaction</p>
+            <div class="buttons">
+                <button class="button view-profile" onclick="expandProfile('profile2')">View Profile</button>
+                <a href="/payment?name=Jane Smith&email=jane.smith@example.com&amount=75" class="hire-now-btn">Hire Now</a>
+            </div>
+        </div>
+        <div id="profile3" class="freelancer-box">
+            <img src="https://randomuser.me/api/portraits/men/20.jpg" alt="Michael Brown">
+            <h3>Michael Brown</h3>
+            <p>Auditor</p>
+            <div class="rating">⭐⭐⭐⭐⭐ (4.7)</div>
+            <p>$90/hour</p>
+            <p>Skilled auditor with experience in regulatory compliance and risk management.</p>
+            <div class="skills">
+                <span class="skill"><i class="fas fa-clipboard-check"></i> Auditing</span>
+                <span class="skill"><i class="fas fa-balance-scale"></i> Regulatory Compliance</span>
+                <span class="skill"><i class="fas fa-shield-alt"></i> Risk Management</span>
+            </div>
+            <p><i class="fas fa-clock"></i> Available now</p>
+            <p><i class="fas fa-briefcase"></i> 40 completed projects</p>
+            <p><i class="fas fa-smile"></i> 97% client satisfaction</p>
+            <div class="buttons">
+                <button class="button view-profile" onclick="expandProfile('profile3')">View Profile</button>
+                <a href="/payment?name=Michael Brown&email=michael.brown@example.com&amount=65" class="hire-now-btn">Hire Now</a>
+            </div>
+        </div>
+        <div id="profile4" class="freelancer-box">
+            <img src="https://randomuser.me/api/portraits/women/20.jpg" alt="Emily Davis">
+            <h3>Emily Davis</h3>
+            <p>Financial Planner</p>
+            <div class="rating">⭐⭐⭐⭐ (4.6)</div>
+            <p>$80/hour</p>
+            <p>Experienced in creating financial plans and retirement strategies.</p>
+            <div class="skills">
+                <span class="skill"><i class="fas fa-calendar-check"></i> Financial Planning</span>
+                <span class="skill"><i class="fas fa-piggy-bank"></i> Retirement Planning</span>
+                <span class="skill"><i class="fas fa-briefcase"></i> Estate Planning</span>
+            </div>
+            <p><i class="fas fa-clock"></i> Available now</p>
+            <p><i class="fas fa-briefcase"></i> 25 completed projects</p>
+            <p><i class="fas fa-smile"></i> 92% client satisfaction</p>
+            <div class="buttons">
+                <button class="button view-profile" onclick="expandProfile('profile4')">View Profile</button>
+                <a href="/payment?name=Emily Davis&email=emily.davis@example.com&amount=70" class="hire-now-btn">Hire Now</a>
+            </div>
+        </div>
+        <div id="profile5" class="freelancer-box">
+            <img src="https://randomuser.me/api/portraits/men/30.jpg" alt="Chris Black">
+            <h3>Chris Black</h3>
+            <p>Investment Consultant</p>
+            <div class="rating">⭐⭐⭐⭐⭐ (4.9)</div>
+            <p>$100/hour</p>
+            <p>Specializes in portfolio management and investment strategies.</p>
+            <div class="skills">
+                <span class="skill"><i class="fas fa-wallet"></i> Portfolio Management</span>
+                <span class="skill"><i class="fas fa-piggy-bank"></i> Investment Strategies</span>
+                <span class="skill"><i class="fas fa-chart-line"></i> Market Analysis</span>
+            </div>
+            <p><i class="fas fa-clock"></i> Available now</p>
+            <p><i class="fas fa-briefcase"></i> 60 completed projects</p>
+            <p><i class="fas fa-smile"></i> 99% client satisfaction</p>
+            <div class="buttons">
+                <button class="button view-profile" onclick="expandProfile('profile5')">View Profile</button>
+                <a href="/payment?name=Chris Black&email=chris.black@example.com&amount=85" class="hire-now-btn">Hire Now</a>
+            </div>
+        </div>
+        <div id="profile6" class="freelancer-box">
+            <img src="https://randomuser.me/api/portraits/men/40.jpg" alt="David Green">
+            <h3>David Green</h3>
+            <p>Tax Specialist</p>
+            <div class="rating">⭐⭐⭐⭐ (4.7)</div>
+            <p>$95/hour</p>
+            <p>Experienced in corporate tax planning and compliance.</p>
+            <div class="skills">
+                <span class="skill"><i class="fas fa-file-invoice-dollar"></i> Tax Planning</span>
+                <span class="skill"><i class="fas fa-briefcase"></i> Corporate Tax</span>
+                <span class="skill"><i class="fas fa-calculator"></i> Compliance</span>
+            </div>
+            <p><i class="fas fa-clock"></i> Available now</p>
+            <p><i class="fas fa-briefcase"></i> 45 completed projects</p>
+            <p><i class="fas fa-smile"></i> 94% client satisfaction</p>
+            <div class="buttons">
+                <button class="button view-profile" onclick="expandProfile('profile6')">View Profile</button>
+                <a href="/payment?name=David Green&email=david.green@example.com&amount=90" class="hire-now-btn">Hire Now</a>
+            </div>
+        </div>
+        <div id="profile7" class="freelancer-box">
+            <img src="https://randomuser.me/api/portraits/women/30.jpg" alt="Sarah Johnson">
+            <h3>Sarah Johnson</h3>
+            <p>Financial Consultant</p>
+            <div class="rating">⭐⭐⭐⭐⭐ (4.8)</div>
+            <p>$90/hour</p>
+            <p>Specializes in financial consulting and wealth management.</p>
+            <div class="skills">
+                <span class="skill"><i class="fas fa-chart-line"></i> Wealth Management</span>
+                <span class="skill"><i class="fas fa-coins"></i> Financial Consulting</span>
+                <span class="skill"><i class="fas fa-dollar-sign"></i> Budgeting</span>
+            </div>
+            <p><i class="fas fa-clock"></i> Available now</p>
+            <p><i class="fas fa-briefcase"></i> 50 completed projects</p>
+            <p><i class="fas fa-smile"></i> 96% client satisfaction</p>
+            <div class="buttons">
+                <button class="button view-profile" onclick="expandProfile('profile7')">View Profile</button>
+                <a href="/payment?name=Sarah Johnson&email=sarah.johnson@example.com&amount=80" class="hire-now-btn">Hire Now</a>
+            </div>
+        </div>
+        <div id="profile8" class="freelancer-box">
+            <img src="https://randomuser.me/api/portraits/men/50.jpg" alt="William Taylor">
+            <h3>William Taylor</h3>
+            <p>Accountant</p>
+            <div class="rating">⭐⭐⭐⭐ (4.6)</div>
+            <p>$70/hour</p>
+            <p>Skilled accountant with expertise in bookkeeping and financial statements.</p>
+            <div class="skills">
+                <span class="skill"><i class="fas fa-book"></i> Bookkeeping</span>
+                <span class="skill"><i class="fas fa-file-invoice"></i> Financial Statements</span>
+                <span class="skill"><i class="fas fa-calculator"></i> Tax Returns</span>
+            </div>
+            <p><i class="fas fa-clock"></i> Available now</p>
+            <p><i class="fas fa-briefcase"></i> 35 completed projects</p>
+            <p><i class="fas fa-smile"></i> 93% client satisfaction</p>
+            <div class="buttons">
+                <button class="button view-profile" onclick="expandProfile('profile8')">View Profile</button>
+                <a href="/payment?name=William Taylor&email=william.taylor@example.com&amount=95" class="hire-now-btn">Hire Now</a>
+            </div>
+        </div>
+        <div id="profile9" class="freelancer-box">
+            <img src="https://randomuser.me/api/portraits/women/40.jpg" alt="Laura White">
+            <h3>Laura White</h3>
+            <p>Investment Analyst</p>
+            <div class="rating">⭐⭐⭐⭐⭐ (4.8)</div>
+            <p>$85/hour</p>
+            <p>Experienced investment analyst specializing in portfolio optimization.</p>
+            <div class="skills">
+                <span class="skill"><i class="fas fa-pie-chart"></i> Portfolio Optimization</span>
+                <span class="skill"><i class="fas fa-chart-bar"></i> Market Analysis</span>
+                <span class="skill"><i class="fas fa-money-bill-wave"></i> Financial Modelling</span>
+            </div>
+            <p><i class="fas fa-clock"></i> Available now</p>
+            <p><i class="fas fa-briefcase"></i> 55 completed projects</p>
+            <p><i class="fas fa-smile"></i> 97% client satisfaction</p>
+            <div class="buttons">
+                <button class="button view-profile" onclick="expandProfile('profile9')">View Profile</button>
+                <a href="/payment?name=Laura White&email=laura.white@example.com&amount=85" class="hire-now-btn">Hire Now</a>
+            </div>
+        </div>
+        <div id="profile10" class="freelancer-box">
+            <img src="https://randomuser.me/api/portraits/men/60.jpg" alt="James Wilson">
+            <h3>James Wilson</h3>
+            <p>Financial Advisor</p>
+            <div class="rating">⭐⭐⭐⭐ (4.5)</div>
+            <p>$80/hour</p>
+            <p>Financial advisor with a focus on retirement and estate planning.</p>
+            <div class="skills">
+                <span class="skill"><i class="fas fa-calendar-alt"></i> Retirement Planning</span>
+                <span class="skill"><i class="fas fa-home"></i> Estate Planning</span>
+                <span class="skill"><i class="fas fa-dollar-sign"></i> Wealth Management</span>
+            </div>
+            <p><i class="fas fa-clock"></i> Available now</p>
+            <p><i class="fas fa-briefcase"></i> 40 completed projects</p>
+            <p><i class="fas fa-smile"></i> 90% client satisfaction</p>
+            <div class="buttons">
+                <button class="button view-profile" onclick="expandProfile('profile10')">View Profile</button>
+                <a href="/payment?name=James Wilson&email=james.wilson@example.com&amount=100" class="hire-now-btn">Hire Now</a>
+            </div>
+        </div>
+    </div>
+    <div id="full-profile1" class="full-profile">
+        <button class="close-button" onclick="closeProfile('profile1')">&times;</button>
+        <div class="profile-content">
+            <img src="https://randomuser.me/api/portraits/men/10.jpg" alt="John Doe">
+            <h2>John Doe</h2>
+            <p>Tax Advisor with 10+ years of experience in corporate taxation and financial planning. Expert in tax strategies and compliance.</p>
+            <p>Contact: john.doe@example.com</p>
+            <p>Phone: (555) 123-4567</p>
+            <div class="skills">
+                <span class="skill"><i class="fas fa-calculator"></i> Taxation</span>
+                <span class="skill"><i class="fas fa-chart-line"></i> Auditing</span>
+                <span class="skill"><i class="fas fa-file-invoice-dollar"></i> Financial Analysis</span>
+            </div>
+        </div>
+    </div>
+    <div id="full-profile2" class="full-profile">
+        <button class="close-button" onclick="closeProfile('profile2')">&times;</button>
+        <div class="profile-content">
+            <img src="https://randomuser.me/api/portraits/women/10.jpg" alt="Jane Smith">
+            <h2>Jane Smith</h2>
+            <p>Financial Analyst with a strong background in market research and financial reporting. Skilled in analyzing financial data and providing insights.</p>
+            <p>Contact: jane.smith@example.com</p>
+            <p>Phone: (555) 987-6543</p>
+            <div class="skills">
+                <span class="skill"><i class="fas fa-chart-pie"></i> Financial Reporting</span>
+                <span class="skill"><i class="fas fa-search-dollar"></i> Market Analysis</span>
+                <span class="skill"><i class="fas fa-coins"></i> Investment Strategies</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="full-profile3" class="full-profile">
+        <button class="close-button" onclick="closeProfile('profile3')">&times;</button>
+        <div class="profile-content">
+            <img src="https://randomuser.me/api/portraits/men/20.jpg" alt="Michael Brown">
+            <h2>Michael Brown</h2>
+            <p>Auditor with expertise in regulatory compliance and risk management. Providing comprehensive auditing services to ensure financial accuracy.</p>
+            <p>Contact: michael.brown@example.com</p>
+            <p>Phone: (555) 654-3210</p>
+            <div class="skills">
+                <span class="skill"><i class="fas fa-clipboard-check"></i> Auditing</span>
+                <span class="skill"><i class="fas fa-balance-scale"></i> Regulatory Compliance</span>
+                <span class="skill"><i class="fas fa-shield-alt"></i> Risk Management</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="full-profile4" class="full-profile">
+        <button class="close-button" onclick="closeProfile('profile4')">&times;</button>
+        <div class="profile-content">
+            <img src="https://randomuser.me/api/portraits/women/20.jpg" alt="Emily Davis">
+            <h2>Emily Davis</h2>
+            <p>Financial Planner with experience in creating financial plans and retirement strategies. Expert in long-term financial goals and investment planning.</p>
+            <p>Contact: emily.davis@example.com</p>
+            <p>Phone: (555) 321-4567</p>
+            <div class="skills">
+                <span class="skill"><i class="fas fa-calendar-check"></i> Financial Planning</span>
+                <span class="skill"><i class="fas fa-piggy-bank"></i> Retirement Planning</span>
+                <span class="skill"><i class="fas fa-briefcase"></i> Estate Planning</span>
+            </div>
+        </div>
+    </div>
+    <div id="full-profile5" class="full-profile">
+        <button class="close-button" onclick="closeProfile('profile5')">&times;</button>
+        <div class="profile-content">
+            <img src="https://randomuser.me/api/portraits/men/30.jpg" alt="Chris Black">
+            <h2>Chris Black</h2>
+            <p>Investment Consultant specializing in portfolio management and investment strategies. Providing tailored investment advice and portfolio optimization.</p>
+            <p>Contact: chris.black@example.com</p>
+            <p>Phone: (555) 789-1234</p>
+            <div class="skills">
+                <span class="skill"><i class="fas fa-wallet"></i> Portfolio Management</span>
+                <span class="skill"><i class="fas fa-piggy-bank"></i> Investment Strategies</span>
+                <span class="skill"><i class="fas fa-chart-line"></i> Market Analysis</span>
+            </div>
+        </div>
+    </div>
+    <div id="full-profile6" class="full-profile">
+        <button class="close-button" onclick="closeProfile('profile6')">&times;</button>
+        <div class="profile-content">
+            <img src="https://randomuser.me/api/portraits/men/40.jpg" alt="David Green">
+            <h2>David Green</h2>
+            <p>Tax Specialist with a focus on corporate tax planning and compliance. Expertise in tax regulations and strategic tax planning for businesses.</p>
+            <p>Contact: david.green@example.com</p>
+            <p>Phone: (555) 456-7890</p>
+            <div class="skills">
+                <span class="skill"><i class="fas fa-file-invoice-dollar"></i> Tax Planning</span>
+                <span class="skill"><i class="fas fa-briefcase"></i> Corporate Tax</span>
+                <span class="skill"><i class="fas fa-calculator"></i> Compliance</span>
+            </div>
+        </div>
+    </div>
+    <div id="full-profile7" class="full-profile">
+        <button class="close-button" onclick="closeProfile('profile7')">&times;</button>
+        <div class="profile-content">
+            <img src="https://randomuser.me/api/portraits/women/30.jpg" alt="Sarah Johnson">
+            <h2>Sarah Johnson</h2>
+            <p>Financial Consultant with expertise in wealth management and budgeting. Providing personalized financial advice and planning services.</p>
+            <p>Contact: sarah.johnson@example.com</p>
+            <p>Phone: (555) 654-9870</p>
+            <div class="skills">
+                <span class="skill"><i class="fas fa-chart-line"></i> Wealth Management</span>
+                <span class="skill"><i class="fas fa-coins"></i> Financial Consulting</span>
+                <span class="skill"><i class="fas fa-dollar-sign"></i> Budgeting</span>
+            </div>
+        </div>
+    </div>
+    <div id="full-profile8" class="full-profile">
+        <button class="close-button" onclick="closeProfile('profile8')">&times;</button>
+        <div class="profile-content">
+            <img src="https://randomuser.me/api/portraits/men/50.jpg" alt="William Taylor">
+            <h2>William Taylor</h2>
+            <p>Accountant with expertise in bookkeeping and financial statements. Providing accurate and reliable accounting services for individuals and businesses.</p>
+            <p>Contact: william.taylor@example.com</p>
+            <p>Phone: (555) 321-7890</p>
+            <div class="skills">
+                <span class="skill"><i class="fas fa-book"></i> Bookkeeping</span>
+                <span class="skill"><i class="fas fa-file-invoice"></i> Financial Statements</span>
+                <span class="skill"><i class="fas fa-calculator"></i> Tax Returns</span>
+            </div>
+        </div>
+    </div>
+    <div id="full-profile9" class="full-profile">
+        <button class="close-button" onclick="closeProfile('profile9')">&times;</button>
+        <div class="profile-content">
+            <img src="https://randomuser.me/api/portraits/women/40.jpg" alt="Laura White">
+            <h2>Laura White</h2>
+            <p>Investment Analyst specializing in portfolio optimization and financial modelling. Expert in analyzing market trends and optimizing investment portfolios.</p>
+            <p>Contact: laura.white@example.com</p>
+            <p>Phone: (555) 987-1234</p>
+            <div class="skills">
+                <span class="skill"><i class="fas fa-pie-chart"></i> Portfolio Optimization</span>
+                <span class="skill"><i class="fas fa-chart-bar"></i> Market Analysis</span>
+                <span class="skill"><i class="fas fa-money-bill-wave"></i> Financial Modelling</span>
+            </div>
+        </div>
+    </div>
+    <div id="full-profile10" class="full-profile">
+        <button class="close-button" onclick="closeProfile('profile10')">&times;</button>
+        <div class="profile-content">
+            <img src="https://randomuser.me/api/portraits/men/60.jpg" alt="James Wilson">
+            <h2>James Wilson</h2>
+            <p>Financial Advisor specializing in retirement and estate planning. Providing expert advice on retirement strategies and estate management.</p>
+            <p>Contact: james.wilson@example.com</p>
+            <p>Phone: (555) 321-4567</p>
+            <div class="skills">
+                <span class="skill"><i class="fas fa-calendar-alt"></i> Retirement Planning</span>
+                <span class="skill"><i class="fas fa-home"></i> Estate Planning</span>
+                <span class="skill"><i class="fas fa-dollar-sign"></i> Wealth Management</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        function expandProfile(profileId) {
+            document.getElementById('full-' + profileId).style.display = 'block';
+        }
+
+        function closeProfile(profileId) {
+            document.getElementById('full-' + profileId).style.display = 'none';
+        }
+            function searchProfiles() {
+                const query = document.getElementById("searchInput").value.toLowerCase();
+                const profiles = document.getElementsByClassName("freelancer-box");
+                for (let i = 0; i < profiles.length; i++) {
+                    const name = profiles[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
+                    if (name.includes(query)) {
+                        profiles[i].style.display = "block"; 
+                    } else {
+                        profiles[i].style.display = "none";  
+                    }
+                }
+            }
+    </script>
+
+</body>
+</html>

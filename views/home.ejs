@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancing Website</title>
+    <link rel="stylesheet" href="\home.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav-top">
+            <ul class="left">
+                <li class="logo"><a href="/"><img src="assets\logo.png" alt="Logo"></a></li>
+            </ul>
+            
+            <ul class="right">
+                <% if (isLoggedIn) { %>
+                    <li><a href="/hirefreelancer" class="icon-hover-effect">Hire Freelancer</a></li>
+                    <% } %>
+                <% if (!isLoggedIn) { %>
+                    <li><a href="/login" class="icon-hover-effect">Login/Register</a></li>
+                <% } else { %>
+                    
+                    <li class="profile-hover">
+                        <a href="#" class="icon-hover-effect profile-link">Profile</a>
+                        <ul class="profile-dropdown">
+                            <li><a href="/profile">View Profile</a></li>
+                            <li>
+                                <form action="/logout" method="POST">
+                                    <button type="submit" class="logout-btn">LOGOUT</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                <% } %>
+                <li><a href="/customersup" class="icon-hover-effect">Customer Support</a></li>
+            </ul>
+            
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1>Find Expert Finance Freelancers</h1>
+                
+                <% if (isLoggedIn) { %>
+                    <p>Hire the best finance professionals for your needs</p>
+                    <a href="/hirefreelancer" class="btn-primary">Hire Freelancer</a>
+                    <% } %>
+                <% if (!isLoggedIn) { %>
+                    <p>Hire the best finance professionals for your needs</p>
+                    <a href="/login" class="btn-primary">Login/Register</a></li>
+                    <% } %>
+            </div>
+        </div>
+
+        <div class="freelancers-section">
+            <h2>Top Finance Freelancers</h2>
+            <div class="freelancers-carousel">
+                <div class="freelancer">
+                    <img src="assets\freelancer1.jpg" alt="Freelancer 1">
+                    <h3>John Doe</h3>
+                    <p>Financial Analyst</p>
+                    <p class="rating">⭐⭐⭐⭐⭐</p>
+                    <a href="/profile/johndoe" class="btn-profile">View Profile</a>
+                </div>
+                <div class="freelancer">
+                    <img src="assets\freelancer2.jpg" alt="Freelancer 2">
+                    <h3>Jane Smith</h3>
+                    <p>Certified Public Accountant (CPA)</p>
+                    <p class="rating">⭐⭐⭐⭐⭐</p>
+                    <a href="/profile/janesmith" class="btn-profile">View Profile</a>
+                </div>
+                <div class="freelancer">
+                    <img src="assets\freelancer3.jpg" alt="Freelancer 3">
+                    <h3>Michael Johnson</h3>
+                    <p>Financial Advisor</p>
+                    <p class="rating">⭐⭐⭐⭐⭐</p>
+                    <a href="/profile/michaeljohnson" class="btn-profile">View Profile</a>
+                </div>
+                <div class="freelancer">
+                    <img src="assets\freelancer4.jpg" alt="Freelancer 4">
+                    <h3>Emily Davis</h3>
+                    <p>Tax Consultant</p>
+                    <p class="rating">⭐⭐⭐⭐⭐</p>
+                    <a href="/profile/emilydavis" class="btn-profile">View Profile</a>
+                </div>
+                <div class="freelancer">
+                    <img src="assets\freelancer5.jpg" alt="Freelancer 5">
+                    <h3>William Brown</h3>
+                    <p>Investment Banker</p>
+                    <p class="rating">⭐⭐⭐⭐⭐</p>
+                    <a href="/profile/williambrown" class="btn-profile">View Profile</a>
+                </div>
+                <div class="freelancer">
+                    <img src="assets\freelancer6.jpg" alt="Freelancer 6">
+                    <h3>Ava Wilson</h3>
+                    <p>Forensic Accountant</p>
+                    <p class="rating">⭐⭐⭐⭐⭐</p>
+                    <a href="/profile/avawilson" class="btn-profile">View Profile</a>
+                </div>
+                <div class="freelancer">
+                    <img src="assets\freelancer7.jpg" alt="Freelancer 7">
+                    <h3>Lucas Turner</h3>
+                    <p>Financial Consultant</p>
+                    <p class="rating">⭐⭐⭐⭐⭐</p>
+                    <a href="/profile/lucasturner" class="btn-profile">View Profile</a>
+                </div>
+                <div class="freelancer">
+                    <img src="assets\freelancer8.jpg" alt="Freelancer 8">
+                    <h3>Sarah Moore</h3>
+                    <p>Budget Analyst</p>
+                    <p class="rating">⭐⭐⭐⭐⭐</p>
+                    <a href="/profile/sarahmoore" class="btn-profile">View Profile</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="reviews-section">
+            <h2>Client Reviews</h2>
+            <div class="reviews-carousel">
+                <div class="review">
+                    <p>"John Doe provided excellent financial analysis for our company."</p>
+                    <p class="review-author">- Client A</p>
+                </div>
+                <div class="review">
+                    <p>"Jane Smith is a thorough and reliable CPA. Highly recommended!"</p>
+                    <p class="review-author">- Client B</p>
+                </div>
+                <div class="review">
+                    <p>"Michael Johnson's financial advice has been invaluable."</p>
+                    <p class="review-author">- Client C</p>
+                </div>
+                <div class="review">
+                    <p>"Emily Davis helped us navigate complex tax issues with ease."</p>
+                    <p class="review-author">- Client D</p>
+                </div>
+                <div class="review">
+                    <p>"William Brown is an outstanding investment banker."</p>
+                    <p class="review-author">- Client E</p>
+                </div>
+                <div class="review">
+                    <p>"Ava Wilson's forensic accounting skills are top-notch."</p>
+                    <p class="review-author">- Client F</p>
+                </div>
+                <div class="review">
+                    <p>"Lucas Turner provided great financial consulting services."</p>
+                    <p class="review-author">- Client G</p>
+                </div>
+                <div class="review">
+                    <p>"Sarah Moore is an exceptional budget analyst."</p>
+                    <p class="review-author">- Client H</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to get started?</h2>
+            <p>Complete your profile and hire top finance freelancers.</p>
+            <a href="/profile" class="btn-primary">Edit your profile here</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-sections">
+            <div class="footer-section">
+                <h3>Product</h3>
+                <div class="footer-links">
+                    <a href="#">About</a>
+                    <a href="#">Team</a>
+                    <a href="#">Careers</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <div class="footer-links">
+                    <a href="#">How it works</a>
+                    <a href="#">Trust & Safety</a>
+                    <a href="#">Help Centre</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Discover</h3>
+                <div class="footer-links">
+                    <a href="#">Guides</a>
+                    <a href="#">Stories</a>
+                    <a href="#">News</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <div class="footer-links">
+                    <a href="#">TalentDesk</a>
+                    <a href="#">Business Cost Calculator</a>
+                    <a href="#">Startup Cities</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer-bottom">
+        <p>&copy; 2023 Your Company Name. All rights reserved.</p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const freelancersCarousel = document.querySelector('.freelancers-carousel');
+            const reviewsCarousel = document.querySelector('.reviews-carousel');
+        
+            let freelancerIndex = 0;
+            let reviewIndex = 0;
+        
+            function cycleFreelancers() {
+                const freelancers = document.querySelectorAll('.freelancer');
+                freelancers.forEach((freelancer, index) => {
+                    if (index >= freelancerIndex && index < freelancerIndex + 4) {
+                        freelancer.style.display = 'block';
+                    } else {
+                        freelancer.style.display = 'none';
+                    }
+                });
+        
+                freelancerIndex = (freelancerIndex + 4) % freelancers.length;
+            }
+        
+            function cycleReviews() {
+                const reviews = document.querySelectorAll('.review');
+                reviews.forEach((review, index) => {
+                    if (index >= reviewIndex && index < reviewIndex + 4) {
+                        review.style.display = 'block';
+                    } else {
+                        review.style.display = 'none';
+                    }
+                });
+        
+                reviewIndex = (reviewIndex + 4) % reviews.length;
+            }
+        
+            cycleFreelancers();
+            cycleReviews();
+            setInterval(cycleFreelancers, 5000);
+            setInterval(cycleReviews, 5000);
+        });
+    </script>
+</body>
+</html>
